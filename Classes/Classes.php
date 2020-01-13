@@ -3,6 +3,7 @@
 class TLN
 {
 
+
   public function Traitement($nom,$prenom,$mail,$login,$mdp,$mdp2)
   {
     $admin=0;
@@ -19,6 +20,7 @@ class TLN
     //Sélection des données dans la table utilisateur
     $reponse=$bdd->prepare('SELECT * FROM stockagecompte WHERE nom=? AND prenom=? OR mail=?');
     $reponse->execute(array($nom, $prenom,$mail));
+
     $donne=$reponse->fetchall();
 
     //Si l'utilisateur existe déjà, on affiche une boite de dialogue d'alerte
@@ -34,8 +36,8 @@ class TLN
     {
       if ($mdp == $mdp2)
       {
-        $req = $bdd->prepare('INSERT INTO utilisateur (nom, prenom, mail,mdp,login,admin) VALUES (?,?,?,?,?,?)');
-        $req -> execute(array($nom, $prenom, $mail,$login,$mdp,$admin));
+        $req = $bdd->prepare('INSERT INTO stockagecompte (login,nom,prenom,mdp,mail,admin) VALUES (?,?,?,?,?,?)');
+        $req -> execute(array($login,$nom, $prenom,$mdp,$mail,$admin));
 
         //Envoi du mail de confirmation
         /*$objet = "lol"
@@ -47,7 +49,7 @@ class TLN
         //$this-> Mail();
 
         //Renvoi vers la page Connexion
-          header("location:#");
+          //header("location:#");
       }
 
       //Sinon, on affiche une boite de dialogue d'erreur
@@ -101,6 +103,7 @@ public function Connexion($mdp,$login)
   session_start ();
 
   //Connexion à la base de données projetweb
+
   try
   {
   $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
@@ -109,48 +112,46 @@ public function Connexion($mdp,$login)
   {
     die('Erreur:'.$e->getMessage());
   }
-  $a = md5($_POST['mdp']);
+
 
   //Sélection dans la table utilisateur
-  $reponse=$bdd->prepare('SELECT * FROM utilisateur WHERE login = :login AND mdp = :mdp AND profil_id = :profil_id');
+  $reponse=$bdd->prepare('SELECT * FROM stockagecompte WHERE login = :login AND mdp = :mdp');
   $reponse->execute(array(
-    'login' => $_POST['login'],
-    'mdp' => md5($_POST['mdp']),
-    'profil_id' => $_POST['profil_id']
-
+    'login' => $login,
+    'mdp' => md5($mdp),
   ));
+
   $donne=$reponse->fetch();
 
   //Pour chaque donnée
 
     //Si les zones login et mdp sont entrées
-    if (isset($_POST['login']) && isset($_POST['mdp']))
+    if (isset($login) && isset($mdp))
     {
 
       //Si les données correspondent au données de la base de données
-      if ($donne['nom'] == $_POST['login'] && $donne['mdp'] == md5($_POST['mdp']) && $donne['prenom'] == $_POST['prenom'])
+      if ($donne['login'] == $login && $donne['mdp'] == md5($mdp))
       {
         //On enregistre login et prénom dans la session
 
-        $_SESSION['login'] = $_POST['login'];
-        $_SESSION['prenom'] = $_POST['prenom'];
+        $_SESSION['login'] = $login;
 
-        if ($donne['profil_id'] == '0')
+        if ($donne['admin'] == '0')
         {
           //Renvoi vers la page Classique
-          header ('location: #');
+          //header ('location: #');
         }
 
-        if ($donne['profil_id'] == '1')
+        if ($donne['admin'] == '1')
         {
           //Renvoi vers la page Admin
-          header ('location: #');
+          //header ('location: #');
         }
       }
       //Sinon on affiche une boite de dialogue d'alerte
       else
       {
-        echo '<body onLoad="alert(\'Accès refusé\')">';
+        echo '<body onLoad="alert(\'Acces refuse\')">';
 
         echo '<meta http-equiv="refresh" content="0;URL=#">';
       }
