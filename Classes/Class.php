@@ -1,8 +1,16 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require 'Mail/vendor/phpmailer/phpmailer/src/Exception.php';
+require 'Mail/vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require 'Mail/vendor/phpmailer/phpmailer/src/SMTP.php';
+require 'Mail/vendor/autoload.php';
+
 
 class TLN
 {
-
 
   public function Traitement($nom,$prenom,$mail,$login,$mdp,$mdp2)
   {
@@ -40,16 +48,15 @@ class TLN
         $req -> execute(array($login,$nom, $prenom,$mdp,$mail,$admin));
 
         //Envoi du mail de confirmation
-        /*$objet = "lol"
-        $sujet = "mdr"
-        $DE = "projetweb932@gmail.com"
-        $A = "e.birba@lprs.fr"*/
+        $objet = "Bienvenue dans le club !";
+        $sujet = "Vous pourrez recevoir ici toutes les nouvauté ou encore les promotions sur nos fabuleux Hamburger.";
+        $DE = "projetweb932@gmail.com";
+        $email = $mail;
 
-
-        //$this-> Mail();
+        $this-> Mail($objet,$sujet,$email);
 
         //Renvoi vers la page Connexion
-          //header("location:#");
+          header("location:http://localhost/ProjetRestau/ProjetRestauration/View/Connexion-Form.php");
       }
 
       //Sinon, on affiche une boite de dialogue d'erreur
@@ -64,8 +71,9 @@ class TLN
 
 //fonction pour envoyer un Mail
 
-/*public function Mail($objet,$sujet,$DE,$A)
+public function Mail($objet,$sujet,$email)
   {
+
   $mail = new PHPMailer(true);
 
   try {
@@ -83,9 +91,9 @@ class TLN
       $mail->addAddress($email, 'user');
 
       $mail->isHTML(true);
-      $mail->Subject = 'Inscription';
-      $mail->Body    = 'Inscription reussie!';
-      $mail->AltBody = 'Inscription reussie!';
+      $mail->Subject = $objet;
+      $mail->Body    = $sujet;
+      $mail->AltBody = $sujet;
 
       $mail->send();
       echo 'Message has been sent';
@@ -93,7 +101,7 @@ class TLN
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 
-  }*/
+  }
 
 //fonction de connexion
 
@@ -139,7 +147,7 @@ public function Connexion($mdp,$login)
         if ($donne['admin'] == '0')
         {
           //Renvoi vers la page Classique
-          //header ('location: #');
+          //header ('location: ../Connexion-Form.php');
         }
 
         if ($donne['admin'] == '1')
