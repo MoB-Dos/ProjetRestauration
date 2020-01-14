@@ -1,6 +1,6 @@
 <?php
 
-require '../Classes/Classes.php';
+require '../Classes/Class.php';
 
 var_dump($_POST);
 
