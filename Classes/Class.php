@@ -28,13 +28,13 @@ class SetUp
   }
 
   public function setPrenom($nom) {
-      if (is_string($nom) && strlen($nom) <= 100) {
+      if (is_string($nom) && strlen($nom) <= 20) {
           $this->_nom = $nom;
       } else { $this->setMessage('Champs incorrect','index.php'); }
   }
 
   public function setPrenom($prenom) {
-      if (is_string($prenom) && strlen($prenom) <= 100) {
+      if (is_string($prenom) && strlen($prenom) <= 20) {
           $this->_prenom = $prenom;
       } else { $this->setMessage('Champs incorrect','index.php'); }
   }
@@ -46,8 +46,20 @@ class SetUp
   }else{
       $this->_prenom = $prenom;;
   }
+
+  public function setLogin($login) {
+      if (is_string($login) && strlen($login) <= 100) {
+          $this->_login = $login;
+      } else { $this->setMessage('Champs incorrect','index.php'); }
+  }
+
+  public function setMdp($mdp) {
+    if ($mdp >=5 && $mdp <= 10) {
+        $this->_mdp = $mdp;
+    } else { $this->setMessage('Champs incorrect','index.php'); }
 }
 
+}
 
 
 }
