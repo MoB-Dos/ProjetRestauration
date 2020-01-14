@@ -1,6 +1,6 @@
 <?php
 
-require '../Classes/Class.php';
+require '../Classes/ClassManager.php';
 
 $login = $_POST['login'];
 $mdp = $_POST['mdp'];
