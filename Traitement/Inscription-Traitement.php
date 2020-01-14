@@ -4,16 +4,15 @@ require '../Classes/ClassManager.php';
 
 var_dump($_POST);
 
-$login = $_POST['login'];
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$mail = $_POST['mail'];
+$event = new utilisateur([
+    'login' => $_POST['login'],
+    'nom' => $_POST['nom'],
+    'prenom' => $_POST['prenom'],
+    'mail' =>$_POST['mail'],
+    'mdp' => md5($_POST['mdp']),
+    'mdp2' => md5($_POST['mdp2'])
+]);
 
-$mdp = md5($_POST['mdp']);
-$mdp2 = md5($_POST['mdp2']);
-
-$a = new TLN;
-
-$a->Traitement($nom,$prenom,$mail,$login,$mdp,$mdp2);
+$add = new utilisateurManager();
 
  ?>
