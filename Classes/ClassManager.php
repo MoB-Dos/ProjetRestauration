@@ -12,8 +12,16 @@ require 'Mail/vendor/autoload.php';
 class TLN
 {
 
-  public function Traitement($nom,$prenom,$mail,$login,$mdp,$mdp2)
+  //$nom,$prenom,$mail,$login,$mdp,$mdp2
+  public function Traitement(SetUp $donnees)
   {
+    $nom = $donnees->getNom();
+    $prenom = $donnees->getPrenom();
+    $mail = $donnees->getMail();
+    $login =$donnees->getLogin();
+    $mdp = $donnees->getMdp();
+    $mdp2 = $donnees->getMdp2();
+
     $admin=0;
     //Connexion à la base de données projetweb
     try
@@ -44,8 +52,10 @@ class TLN
     {
       if ($mdp == $mdp2)
       {
-        $req = $bdd->prepare('INSERT INTO stockagecompte (login,nom,prenom,mdp,mail,admin) VALUES (?,?,?,?,?,?)');
-        $req -> execute(array($login,$nom, $prenom,$mdp,$mail,$admin));
+        $mdp2 = md5($mdp2);
+
+        $req = $bdd->prepare('INSERT INTO stockagecompte (login,nom,prenom,mdp,mdp2,mail,admin) VALUES (?,?,?,?,?,?,?)');
+        $req -> execute(array($login,$nom, $prenom,$mdp,$mdp2,$mail,$admin));
 
         //Envoi du mail de confirmation
         $objet = "Bienvenue dans le club !";
@@ -54,9 +64,6 @@ class TLN
         $email = $mail;
 
         $this-> Mail($objet,$sujet,$email);
-
-        //Renvoi vers la page Connexion
-          header("location:http://localhost/ProjetRestau/ProjetRestauration/View/Connexion-Form.php");
       }
 
       //Sinon, on affiche une boite de dialogue d'erreur
@@ -96,19 +103,23 @@ public function Mail($objet,$sujet,$email)
       $mail->AltBody = $sujet;
 
       $mail->send();
+
       echo 'Message has been sent';
         } catch (Exception $e) {
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }
+    }
 
   }
 
 //fonction de connexion
 
-public function Connexion($mdp,$login)
+public function Connexion(SetUp $donnees)
 {
   //Démarrage de la session
   session_start ();
+
+  $mdp = $donnees->getMdp();
+  $login =$donnees->getLogin();
 
   //Connexion à la base de données projetweb
 
@@ -126,7 +137,7 @@ public function Connexion($mdp,$login)
   $reponse=$bdd->prepare('SELECT * FROM stockagecompte WHERE login = :login AND mdp = :mdp');
   $reponse->execute(array(
     'login' => $login,
-    'mdp' => md5($mdp),
+    'mdp' => $mdp,
   ));
 
   $donne=$reponse->fetch();
@@ -138,7 +149,7 @@ public function Connexion($mdp,$login)
     {
 
       //Si les données correspondent au données de la base de données
-      if ($donne['login'] == $login && $donne['mdp'] == md5($mdp))
+      if ($donne['login'] == $login && $donne['mdp'] == $mdp)
       {
         //On enregistre login et prénom dans la session
 
@@ -147,7 +158,7 @@ public function Connexion($mdp,$login)
         if ($donne['admin'] == '0')
         {
           //Renvoi vers la page Classique
-          //header ('location: ../Connexion-Form.php');
+          header ('location: ../View/Connexion-Form.php');
         }
 
         if ($donne['admin'] == '1')

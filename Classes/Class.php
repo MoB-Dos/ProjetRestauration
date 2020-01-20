@@ -2,7 +2,7 @@
 
 class SetUp
 {
-  private $_nom,$_prenom,$_mail,$login,$mdp;
+  private $_nom,$_prenom,$_mail,$_login,$_mdp,$_mdp2;
 
   public function __construct(array $donnees)
   {
@@ -30,43 +30,59 @@ class SetUp
   public function setNom($nom) {
       if (is_string($nom) && strlen($nom) <= 20) {
           $this->_nom = $nom;
-      } else { $this->setMessage('Champs incorrect','index.php'); }
+      } else { trigger_error('erreur nom',E_USER_WARNING);
+        return; }
   }
 
   public function setPrenom($prenom) {
       if (is_string($prenom) && strlen($prenom) <= 20) {
           $this->_prenom = $prenom;
-      } else { $this->setMessage('Champs incorrect','index.php'); }
+      } else { trigger_error('erreur prenom',E_USER_WARNING);
+        return; }
   }
 
   public function setMail($mail){
-  $string = 'e.birbalprs.fr';
+  $string = $mail;
   if(stristr($string, '@') === FALSE) {
-   $this->setMessage('Champs incorrect','index.php');
+    trigger_error('erreur mail',E_USER_WARNING);
+      return;
   }else{
-      $this->_prenom = $prenom;;
+      $this->_mail = $mail;
   }
+}
 
   public function setLogin($login) {
       if (is_string($login) && strlen($login) <= 100) {
           $this->_login = $login;
-      } else { $this->setMessage('Champs incorrect','index.php'); }
+      } else {trigger_error('erreur login',E_USER_WARNING);
+        return; }
   }
 
   public function setMdp($mdp) {
-    if ($mdp >=5 && $mdp <= 10) {
+
+    if (strlen($mdp) > 5 && strlen($mdp) <= 10) {
+      echo $mdp;
         $this->_mdp = $mdp;
-    } else { $this->setMessage('Champs incorrect','index.php'); }
+    } else { trigger_error('erreur mdp',E_USER_WARNING);
+      return; }
 }
+
+public function setMdp2($mdp2) {
+
+  if (strlen($mdp2) > 5 && strlen($mdp2) <= 10) {
+    echo $mdp2;
+      $this->_mdp2 = $mdp2;
+  } else { trigger_error('erreur mdp',E_USER_WARNING);
+    return; }
+}
+
 
 public function getNom() { return $this->_nom; }
 public function getPrenom() { return $this->_prenom; }
 public function getLogin() { return $this->_login; }
 public function getMail() { return $this->_mail; }
 public function getMdp() { return $this->_mdp; }
-
-}
-
+public function getMdp2() { return $this->_mdp2; }
 
 }
 
