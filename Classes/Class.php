@@ -27,7 +27,7 @@ class SetUp
       }
   }
 
-  public function setPrenom($nom) {
+  public function setNom($nom) {
       if (is_string($nom) && strlen($nom) <= 20) {
           $this->_nom = $nom;
       } else { $this->setMessage('Champs incorrect','index.php'); }
@@ -58,6 +58,12 @@ class SetUp
         $this->_mdp = $mdp;
     } else { $this->setMessage('Champs incorrect','index.php'); }
 }
+
+public function getNom() { return $this->_nom; }
+public function getPrenom() { return $this->_prenom; }
+public function getLogin() { return $this->_login; }
+public function getMail() { return $this->_mail; }
+public function getMdp() { return $this->_mdp; }
 
 }
 
