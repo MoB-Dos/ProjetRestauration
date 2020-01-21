@@ -1,4 +1,7 @@
 <?php
+
+setcookie('admin', '0', time() + 365*24*3600, null, null, false, true);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -15,6 +18,7 @@ class TLN
   //$nom,$prenom,$mail,$login,$mdp,$mdp2
   public function Traitement(SetUp $donnees)
   {
+
     $nom = $donnees->getNom();
     $prenom = $donnees->getPrenom();
     $mail = $donnees->getMail();
@@ -154,17 +158,23 @@ public function Connexion(SetUp $donnees)
         //On enregistre login et prénom dans la session
 
         $_SESSION['login'] = $login;
+        $_SESSION['mdp'] = $mdp;
 
         if ($donne['admin'] == '0')
         {
           //Renvoi vers la page Classique
-          header ('location: ../View/Connexion-Form.php');
+
+          setcookie('admin','0', time() + 365*24*3600, null, null, false, true);
+          $_SESSION['admin'] = 0;
+          header ('location: ../View/accueil.php');
         }
 
         if ($donne['admin'] == '1')
         {
-          //Renvoi vers la page Admin
-          //header ('location: #');
+          setcookie('admin', '1', time() + 365*24*3600, null, null, false, true);
+          $_SESSION['admin'] = 1;
+          header ('location: ../View/accueil.php');
+
         }
       }
       //Sinon on affiche une boite de dialogue d'alerte

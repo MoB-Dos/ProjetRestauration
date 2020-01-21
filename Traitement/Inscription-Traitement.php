@@ -19,7 +19,7 @@ $add = new TLN($test);
 
 $r = $add->Traitement($test);
 
-header("location: ../Traitement/Connexion-Traitement.php");
+header("location: ../View/Connexion-Form.php");
 
 
  ?>
