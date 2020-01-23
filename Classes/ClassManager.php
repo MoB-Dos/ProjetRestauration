@@ -193,6 +193,36 @@ public function Connexion(SetUp $donnees)
 
 }
 
+public function affichage();
+{
+
+  try
+  {
+  $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
+  }
+  catch(Exception $e)
+  {
+    die('Erreur:'.$e->getMessage());
+  }
+
+  //Sélection dans la table utilisateur
+  $reponse=$bdd->prepare('SELECT * FROM stockagecompte WHERE login = :login AND mail = :mail');
+  $reponse->execute(array(
+    'login' => $login,
+    'mail' => $mail,
+  ));
+
+  $donne=$reponse->fetch();
+
+
+
+
+
+
+
+
+}
+
 }
 
 
