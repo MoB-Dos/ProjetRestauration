@@ -1,25 +1,38 @@
 <?php
+require '../Classes/ClassManager.php';
+require '../Classes/Class.php';
 
 session_start ();
 
 // On récupère nos variables de session
 if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
 
-var_dump($_SESSION['admin']);
 
   if ($_SESSION['admin'] == 0) {
-  	echo 'boo';
-    session_destroy();
+
+    $show = new TLN();
+
+    $r = $show->affichage();
+
+    $r = $show->modification();
+
+
   }
   else {
-  	echo 'boo admin';
-    session_destroy();
+
+    $show = new TLN();
+
+    $r = $show->affichage();
+
+  	echo 'Admin';
+
+    
   }
 }
 else {
-	echo 'oob';
 
-  
+	echo 'bvn';
+
 }
 
 ?>

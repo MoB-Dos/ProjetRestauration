@@ -193,35 +193,107 @@ public function Connexion(SetUp $donnees)
 
 }
 
-public function affichage();
+public function affichage()
 {
 
-  try
-  {
+  try{
+$bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
+}
+
+catch(Exception $e){
+  die('Erreur:'.$e->getMessage());
+}
+
+//Commande sql pour selectionner dans la table utilisateur
+$req = $bdd->prepare('SELECT * FROM stockagecompte WHERE nom = :nom and mdp = :mdp');
+$req->execute(array('nom' => $_SESSION['login'],
+'mdp' => $_SESSION['mdp']));
+$donne=$req->fetchall();
+//Affichage de chacune des donnees selon le profil_id
+foreach ($donne as $value) {
+
+    echo "Nom : ".$value['nom'].'<br><br>';
+    echo "Prenom : ".$value['prenom'].'<br><br>';
+    echo "Mail : ".$value['mail'].'<br><br>' ;
+    echo "Votre login: ".$value['login'].'<br><br>' ;
+  }
+}
+
+//modification des info user
+public function modification()
+{
+
+
+try{
+  $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
+}
+
+catch(Exception $e){
+  die('Erreur:'.$e->getMessage());
+}
+
+//Sélection dans la table utilisateur
+$req=$bdd->prepare('SELECT * FROM stockagecompte WHERE nom= ? AND mdp=?');
+$req->execute(array( $_SESSION['login'],  $_SESSION['mdp']));
+$donnee = $req->fetch();
+
+?>
+
+<!-- Formulaire de modification -->
+<form method="post" action="../Traitement/ModifUser-Traitement.php">
+
+  Votre login:
+	<input type="text" name="login" value=<?php echo $donnee['login'];?>>
+  <br><br>
+
+  Votre nom:
+	<input type="text" name="nom" value=<?php echo $donnee['nom'];?>>
+	<br><br>
+
+	Votre prenom:
+	<input type="text" name="prenom" value=<?php echo $donnee['prenom'];?>>
+  <br><br>
+
+	Votre mail:
+	<input type="text" name="mail" value=<?php echo $donnee['mail'];?>>
+  <br><br>
+
+<input type="submit" value="Envoyer"/>
+
+</form>
+
+	<?php
+
+}
+
+
+public function ModifcationUser(SetUp $donnees)
+{
+
+  try{
   $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
   }
-  catch(Exception $e)
-  {
+
+  catch(Exception $e){
     die('Erreur:'.$e->getMessage());
   }
 
-  //Sélection dans la table utilisateur
-  $reponse=$bdd->prepare('SELECT * FROM stockagecompte WHERE login = :login AND mail = :mail');
-  $reponse->execute(array(
-    'login' => $login,
-    'mail' => $mail,
-  ));
+var_dump($donnees);
 
-  $donne=$reponse->fetch();
+    $nom = $donnees->getNom();
+    $prenom = $donnees->getPrenom();
+    $mail = $donnees->getMail();
+    $login =$donnees->getLogin();
 
 
-
-
-
-
+  //Modification dans la table utilisateur
+    $req = $bdd->prepare('UPDATE stockagecompte SET login = ?, nom = ?, prenom = ?, mail = ? WHERE login = ? AND mdp = ?');
+    $a = $req -> execute(array($login, $nom,$prenom, $mail,$_SESSION['login'], $_SESSION['mdp']));
 
 
 }
+
+
 
 }
 
