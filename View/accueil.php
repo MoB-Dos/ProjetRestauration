@@ -4,6 +4,7 @@ require '../Classes/Class.php';
 
 session_start ();
 
+var_dump($_SESSION['login']);
 // On récupère nos variables de session
 if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
 
@@ -14,8 +15,11 @@ if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
 
     $r = $show->affichage();
 
-    $r = $show->modification();
+    $l = $show->modification();
 
+    ?>
+    <input type="button" value="Deconnexion" onclick="window.location.href='../Traitement/deco.php'">
+    <?php
 
   }
   else {
@@ -26,7 +30,7 @@ if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
 
   	echo 'Admin';
 
-    
+
   }
 }
 else {

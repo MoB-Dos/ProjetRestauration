@@ -2,6 +2,9 @@
 
 setcookie('admin', '0', time() + 365*24*3600, null, null, false, true);
 
+setcookie('login','0', time() + 365*24*3600, null, null, false, true);
+setcookie('mdp','0', time() + 365*24*3600, null, null, false, true);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -205,12 +208,14 @@ catch(Exception $e){
 }
 
 //Commande sql pour selectionner dans la table utilisateur
-$req = $bdd->prepare('SELECT * FROM stockagecompte WHERE nom = :nom and mdp = :mdp');
-$req->execute(array('nom' => $_SESSION['login'],
+$req = $bdd->prepare('SELECT * FROM stockagecompte WHERE login = :login and mdp = :mdp');
+$req->execute(array('login' => $_SESSION['login'],
 'mdp' => $_SESSION['mdp']));
-$donne=$req->fetchall();
+$donnees=$req->fetchall();
+
+var_dump($donnees);
 //Affichage de chacune des donnees selon le profil_id
-foreach ($donne as $value) {
+foreach ($donnees as $value) {
 
     echo "Nom : ".$value['nom'].'<br><br>';
     echo "Prenom : ".$value['prenom'].'<br><br>';
@@ -232,9 +237,12 @@ catch(Exception $e){
   die('Erreur:'.$e->getMessage());
 }
 
+var_dump($_SESSION['login']);
+var_dump($_SESSION['mdp']);
+
 //Sélection dans la table utilisateur
-$req=$bdd->prepare('SELECT * FROM stockagecompte WHERE nom= ? AND mdp=?');
-$req->execute(array( $_SESSION['login'],  $_SESSION['mdp']));
+$req=$bdd->prepare('SELECT * FROM stockagecompte WHERE login= ? AND mdp=?');
+$req->execute(array( $_SESSION['login'], $_SESSION['mdp']));
 $donnee = $req->fetch();
 
 ?>
@@ -267,8 +275,23 @@ $donnee = $req->fetch();
 }
 
 
-public function ModifcationUser(SetUp $donnees)
+public function ModificationUser(SetUp $donnees)
 {
+
+  var_dump($_SESSION['login']);
+  var_dump($_SESSION['mdp']);
+
+  setcookie('login',$_SESSION['login'], time() + 365*24*3600, null, null, false, true);
+
+
+  $this-> Deconnexion();
+
+  $_SESSION['login'];
+
+  $nom = $donnees->getNom();
+  $prenom = $donnees->getPrenom();
+  $mail = $donnees->getMail();
+  $login =$donnees->getLogin();
 
   try{
   $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
@@ -280,19 +303,22 @@ public function ModifcationUser(SetUp $donnees)
 
 var_dump($donnees);
 
-    $nom = $donnees->getNom();
-    $prenom = $donnees->getPrenom();
-    $mail = $donnees->getMail();
-    $login =$donnees->getLogin();
-
 
   //Modification dans la table utilisateur
     $req = $bdd->prepare('UPDATE stockagecompte SET login = ?, nom = ?, prenom = ?, mail = ? WHERE login = ? AND mdp = ?');
-    $a = $req -> execute(array($login, $nom,$prenom, $mail,$_SESSION['login'], $_SESSION['mdp']));
+    $a = $req -> execute(array($login, $nom,$prenom, $mail, $_COOKIE['login'], $_SESSION['mdp']));
 
+    $_SESSION['login'] = $login;
 
+var_dump($donnees);
 }
 
+public function Deconnexion()
+{
+
+  session_destroy();
+
+}
 
 
 }
