@@ -2,9 +2,9 @@
 session_start();
 
 require '../Classes/ClassManager.php';
-require '../Classes/Class.php';
+require '../Classes/SetUp.php';
 
-$deco = new TLN;
+$deco = new ClassManager;
 
 $r = $deco->Deconnexion();
 

@@ -1,19 +1,22 @@
 <?php
 require '../Classes/ClassManager.php';
-require '../Classes/Class.php';
+require '../Classes/SetUp.php';
 
 session_start ();
 
-var_dump($_SESSION['login']);
 // On récupère nos variables de session
-if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
+if (isset($_SESSION['login'])) {
 
 
   if ($_SESSION['admin'] == 0) {
 
-    $show = new TLN();
+    $show = new ClassManager();
+
+    echo 'Affichage : '.'<br><br>';
 
     $r = $show->affichage();
+
+    echo 'Modification :'.'<br><br>';
 
     $l = $show->modification();
 
@@ -24,7 +27,7 @@ if (isset($_SESSION['login']) && isset($_SESSION['mdp'])) {
   }
   else {
 
-    $show = new TLN();
+    $show = new ClassManager();
 
     $r = $show->affichage();
 

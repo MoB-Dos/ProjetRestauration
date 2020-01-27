@@ -1,7 +1,7 @@
 <?php
 
 require '../Classes/ClassManager.php';
-require '../Classes/Class.php';
+require '../Classes/SetUp.php';
 
 
 $test = new SetUp([
@@ -9,7 +9,7 @@ $test = new SetUp([
     'mdp' => $_POST['mdp'],
 ]);
 
-$add = new TLN($test);
+$add = new ClassManager($test);
 
 $r = $add->Connexion($test);
 

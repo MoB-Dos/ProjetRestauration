@@ -3,7 +3,7 @@
 session_start();
 
 require '../Classes/ClassManager.php';
-require '../Classes/Class.php';
+require '../Classes/SetUp.php';
 
 var_dump($_POST);
 
@@ -14,7 +14,7 @@ $test = new SetUp([
     'mail' =>$_POST['mail'],
 ]);
 
-$modif = new TLN($test);
+$modif = new ClassManager($test);
 
 
 $r = $modif->ModificationUser($test);

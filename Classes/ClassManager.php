@@ -3,7 +3,6 @@
 setcookie('admin', '0', time() + 365*24*3600, null, null, false, true);
 
 setcookie('login','0', time() + 365*24*3600, null, null, false, true);
-setcookie('mdp','0', time() + 365*24*3600, null, null, false, true);
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -15,7 +14,7 @@ require 'Mail/vendor/phpmailer/phpmailer/src/SMTP.php';
 require 'Mail/vendor/autoload.php';
 
 
-class TLN
+class ClassManager
 {
 
   //$nom,$prenom,$mail,$login,$mdp,$mdp2
@@ -126,7 +125,7 @@ public function Connexion(SetUp $donnees)
   session_start ();
 
   $mdp = $donnees->getMdp();
-  $login =$donnees->getLogin();
+  $login = $donnees->getLogin();
 
   //Connexion à la base de données projetweb
 
@@ -161,7 +160,6 @@ public function Connexion(SetUp $donnees)
         //On enregistre login et prénom dans la session
 
         $_SESSION['login'] = $login;
-        $_SESSION['mdp'] = $mdp;
 
         if ($donne['admin'] == '0')
         {
@@ -208,12 +206,12 @@ catch(Exception $e){
 }
 
 //Commande sql pour selectionner dans la table utilisateur
-$req = $bdd->prepare('SELECT * FROM stockagecompte WHERE login = :login and mdp = :mdp');
-$req->execute(array('login' => $_SESSION['login'],
-'mdp' => $_SESSION['mdp']));
+$req = $bdd->prepare('SELECT * FROM stockagecompte WHERE login = :login');
+$req->execute(array('login' => $_SESSION['login']));
+
 $donnees=$req->fetchall();
 
-var_dump($donnees);
+
 //Affichage de chacune des donnees selon le profil_id
 foreach ($donnees as $value) {
 
@@ -237,12 +235,10 @@ catch(Exception $e){
   die('Erreur:'.$e->getMessage());
 }
 
-var_dump($_SESSION['login']);
-var_dump($_SESSION['mdp']);
 
 //Sélection dans la table utilisateur
-$req=$bdd->prepare('SELECT * FROM stockagecompte WHERE login= ? AND mdp=?');
-$req->execute(array( $_SESSION['login'], $_SESSION['mdp']));
+$req=$bdd->prepare('SELECT * FROM stockagecompte WHERE login= ?');
+$req->execute(array( $_SESSION['login']));
 $donnee = $req->fetch();
 
 ?>
@@ -278,15 +274,9 @@ $donnee = $req->fetch();
 public function ModificationUser(SetUp $donnees)
 {
 
-  var_dump($_SESSION['login']);
-  var_dump($_SESSION['mdp']);
 
   setcookie('login',$_SESSION['login'], time() + 365*24*3600, null, null, false, true);
 
-
-  $this-> Deconnexion();
-
-  $_SESSION['login'];
 
   $nom = $donnees->getNom();
   $prenom = $donnees->getPrenom();
@@ -301,16 +291,17 @@ public function ModificationUser(SetUp $donnees)
     die('Erreur:'.$e->getMessage());
   }
 
-var_dump($donnees);
 
 
   //Modification dans la table utilisateur
-    $req = $bdd->prepare('UPDATE stockagecompte SET login = ?, nom = ?, prenom = ?, mail = ? WHERE login = ? AND mdp = ?');
-    $a = $req -> execute(array($login, $nom,$prenom, $mail, $_COOKIE['login'], $_SESSION['mdp']));
+    $req = $bdd->prepare('UPDATE stockagecompte SET login = ?, nom = ?, prenom = ?, mail = ? WHERE login = ?');
+    $a = $req -> execute(array($login, $nom,$prenom, $mail, $_SESSION['login']));
+
+
+    $this-> Deconnexion();
 
     $_SESSION['login'] = $login;
 
-var_dump($donnees);
 }
 
 public function Deconnexion()

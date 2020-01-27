@@ -1,7 +1,7 @@
 <?php
 
 require '../Classes/ClassManager.php';
-require '../Classes/Class.php';
+require '../Classes/SetUp.php';
 
 var_dump($_POST);
 
@@ -15,7 +15,7 @@ $test = new SetUp([
 
 ]);
 
-$add = new TLN($test);
+$add = new ClassManager($test);
 
 $r = $add->Traitement($test);
 
