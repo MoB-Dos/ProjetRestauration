@@ -36,7 +36,7 @@
 		<div class="row banner-bottom align-items-center justify-content-center">
 			<div class="col-lg-4">
 				<div class="video-popup d-flex align-items-center">
-					<a class="play-video video-play-button animate" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" data-animate="zoomIn"
+					<a class="play-video video-play-button animate" href="https://www.youtube.com/watch?v=aQM8yWoiy5s" data-animate="zoomIn"
 					 data-duration="1.5s" data-delay="0.1s">
 						<span><img src="img/banner/play-icon.png" alt=""></span>
 					</a>
