@@ -16,7 +16,7 @@
 <body id="book-table">
 
 	<!--================ Start Header Menu Area =================-->
-	<?php  require_once('navbar.html') ?>
+	<?php  require_once('navbar.php') ?>
 	<!--================ End Home Banner Area =================-->
 	<div class="site-main">
 		<!--================ Start Home Banner Area =================-->

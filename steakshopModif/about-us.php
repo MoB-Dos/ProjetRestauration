@@ -16,7 +16,7 @@
 <body>
 
 	<!--================ Start Header Menu Area =================-->
-	<?php  require_once('navbar.html') ?>
+	<?php  require_once('navbar.php') ?>
 	<!--================ End Header Menu Area =================-->
 
 	<div class="site-main">

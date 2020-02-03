@@ -18,7 +18,7 @@
 <body>
 
 	<!--================ Start Header Menu Area =================-->
-	 <?php  require_once('navbar.html') ?>
+	 <?php  require_once('navbar.php') ?>
 	<!--================ End Header Menu Area =================-->
 
 	<div class="site-main">
@@ -50,10 +50,9 @@
 				<div class="banner_content">
 					<div class="row d-flex align-items-center">
 						<div class="col-lg-8 col-md-12">
-							<p class="top-text">Steak Shop offers best steak in town</p>
-							<h1>Steak Shop offers best steak in town</h1>
-							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-								especially in the workplace. That’s why it’s crucial that, as women.</p>
+							<p class="top-text"></p>
+							<h1>GOOD GOOD </h1>
+							<h1>le meilleur de la cuisine antillaise</h1>
 						</div>
 						<div class="col-lg-4 col-md-12">
 							<div class="banner-btn">

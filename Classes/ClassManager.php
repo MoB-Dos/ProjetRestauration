@@ -167,7 +167,7 @@ public function Connexion(SetUp $donnees)
 
           setcookie('admin','0', time() + 365*24*3600, null, null, false, true);
           $_SESSION['admin'] = 0;
-          header ('location: ../View/accueil.php');
+          header ('location: ../steakshopModif/(index).php');
         }
 
         if ($donne['admin'] == '1')

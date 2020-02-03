@@ -8,6 +8,6 @@ $deco = new ClassManager;
 
 $r = $deco->Deconnexion();
 
-header("location: ../View/accueil.php");
+header("location: ../steakshopModif/(index).php");
 
 ?>
