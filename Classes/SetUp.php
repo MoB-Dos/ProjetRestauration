@@ -2,7 +2,7 @@
 
 class SetUp
 {
-  private $_nom,$_prenom,$_mail,$_login,$_mdp,$_mdp2;
+  private $_nom,$_prenom,$_mail,$_login,$_mdp,$_mdp2,$_tel,$_date,$_place;
 
   public function __construct(array $donnees)
   {
@@ -76,6 +76,25 @@ public function setMdp2($mdp2) {
     return; }
 }
 
+public function setTel($tel) {
+
+  if ($tel = 10) {
+      $this->_tel = $tel;
+  } else { trigger_error('erreur tel',E_USER_WARNING);
+    return; }
+}
+
+public function setPlace($place) {
+
+  if ($place = 10) {
+      $this->_place = $place;
+  } else { trigger_error('erreur place',E_USER_WARNING);
+    return; }
+}
+
+public function getTel() { return $this->_tel; }
+public function getDate() { return $this->_date; }
+public function getPlace() { return $this->_place; }
 
 public function getNom() { return $this->_nom; }
 public function getPrenom() { return $this->_prenom; }

@@ -135,48 +135,34 @@
 				<div class="row align-items-center justify-content-center">
 					<div class="col-lg-6 offset-lg-6">
 						<div class="contact-form-section">
-							<h1>Reservation Form</h1>
-							<form class="contact-form-area contact-page-form contact-form text-right" id="myForm" action="mail.html" method="post">
+							<h1>Formulaire de reservation</h1>
+							<form class="contact-form-area contact-page-form contact-form text-right" action="../Traitement/reservation.php" method="post">
 								<div class="form-group col-md-12">
-									<input type="text" class="form-control" id="name" name="name" placeholder="Name" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Name'">
+									<input type="text" class="form-control" id="name" name="nom" placeholder="Nom" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Nom'">
 								</div>
 								<div class="form-group col-md-12">
-									<input type="email" class="form-control" id="email" name="email" placeholder="Email Address" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Email Address'">
+									<input type="email" class="form-control" id="email" name="mail" placeholder="Adresse Mail" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Adresse Mail'">
 								</div>
+
 								<div class="form-group col-md-12">
-									<input type="text" class="form-control" id="subject" name="subject" placeholder="Phone Number" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Phone Number'">
+									<input type="text" class="form-control" id="subject" name="tel" placeholder="Numero de telephone" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Numero de telephone'">
 								</div>
+
 								<div class="form-group col-md-12">
-									<div class="form-select">
-										<select>
-											<option value="1">Number of people</option>
-											<option value="1">Number of people</option>
-											<option value="1">Number of people</option>
-											<option value="1">Number of people</option>
-											<option value="1">Number of people</option>
-										</select>
-									</div>
+									<input type="text" class="form-control" id="place" name="place" placeholder="Nombre de personne" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Nombre de personne'">
 								</div>
+
+
 								<div class="form-group col-md-12">
-									<input type="text" class="form-control" id="datepicker" name="text" placeholder="Select Date & Time" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Select Date & Time'">
-								</div>
-								<div class="form-group col-md-12">
-									<div class="form-select">
-										<select>
-											<option value="1">Select event</option>
-											<option value="1">Select event Dhaka</option>
-											<option value="1">Select event Dilli</option>
-											<option value="1">Select event Newyork</option>
-											<option value="1">Select event Islamabad</option>
-										</select>
-									</div>
+									<input type="text" class="form-control" id="datepicker" name="date" placeholder="Choissisez une date !" onfocus="this.placeholder = ''"
+									 onblur="this.placeholder = 'Choissisez une date !'">
 								</div>
 								<div class="col-lg-12 text-center">
-									<button class="primary-btn text-uppercase">Make Reservation</button>
+									<button class="primary-btn text-uppercase">Faire une reservation !</button>
 								</div>
 							</form>
 						</div>
