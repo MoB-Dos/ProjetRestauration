@@ -319,6 +319,13 @@ public function reservationtable(Setup $donnees)
   $date =$donnees->getDate();
   $tel = $donnees->getTel();
 
+  var_dump($nom) ;
+  var_dump($tel) ;
+  var_dump($mail) ;
+  var_dump($place) ;
+  var_dump($date) ;
+
+
   try
   {
   $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
@@ -333,7 +340,7 @@ public function reservationtable(Setup $donnees)
   $req = $bdd->prepare('INSERT INTO reservationtable (nom,tel,mail,place,daate) VALUES (?,?,?,?,?)');
   $req -> execute(array($nom, $tel,$mail,$place,$date));
 
-echo'hello world';
+  var_dump($donnees);
 
 
 }
