@@ -313,7 +313,8 @@ public function Deconnexion()
 
 public function reservationtable(Setup $donnees)
 {
-  $nom = $donnees->getNom();
+
+  $nom = 'lol';
   $place = $donnees->getPlace();
   $mail = $donnees->getMail();
   $date =$donnees->getDate();
@@ -328,19 +329,20 @@ public function reservationtable(Setup $donnees)
 
   try
   {
-  $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
+  $bdd2= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
   }
   catch(Exception $e)
   {
     die('Erreur:'.$e->getMessage());
   }
-  echo'hello world';
+ 
 
 
-  $req = $bdd->prepare('INSERT INTO reservationtable (nom,tel,mail,place,daate) VALUES (?,?,?,?,?)');
-  $req -> execute(array($nom, $tel,$mail,$place,$date));
+  $req2 = $bdd2->prepare('INSERT INTO reservationtable (nom) VALUES (?)');
 
-  var_dump($donnees);
+  $req2 -> execute(array($nom));
+
+  var_dump($bdd2);
 
 
 }

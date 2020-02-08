@@ -78,7 +78,7 @@ public function setMdp2($mdp2) {
 
 public function setTel($tel) {
 
-  if ($tel >+ 10) {
+  if ($tel >= 10) {
       $this->_tel = $tel;
   } else { trigger_error('erreur tel',E_USER_WARNING);
     return; }
@@ -86,7 +86,7 @@ public function setTel($tel) {
 
 public function setPlace($place) {
 
-  if ($place <= 10) {
+  if ($place) {
       $this->_place = $place;
   } else { trigger_error('erreur place',E_USER_WARNING);
     return; }
