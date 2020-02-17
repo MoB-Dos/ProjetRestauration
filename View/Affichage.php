@@ -2,6 +2,8 @@
 require '../Classes/ClassManager.php';
 require '../Classes/SetUp.php';
 
+
+
 session_start ();
 
     $show = new ClassManager();
@@ -10,8 +12,17 @@ session_start ();
 
     $r = $show->affichage();
 
+    echo 'Reservation : '.'<br><br>';
+
+    $t = $show->affichage2();
+
+
+
     echo 'Modification :'.'<br><br>';
 
     $l = $show->modification();
+
+
+
 
 ?>

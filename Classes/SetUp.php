@@ -78,26 +78,26 @@ public function setMdp2($mdp2) {
 
 public function setTel($tel) {
 
-  if ($tel >= 10) {
+  /*if ($tel) {*/
       $this->_tel = $tel;
-  } else { trigger_error('erreur tel',E_USER_WARNING);
-    return; }
+  /*} else { trigger_error('erreur tel',E_USER_WARNING);
+    return; }*/
 }
 
 public function setPlace($place) {
 
-  if ($place) {
+  /*if ($place) {*/
       $this->_place = $place;
-  } else { trigger_error('erreur place',E_USER_WARNING);
-    return; }
+  /*} else { trigger_error('erreur place',E_USER_WARNING);
+    return; }*/
 }
 
 public function setDate($date) {
 
-  if ($date) {
+ /*if ($date) {*/
       $this->_date = $date;
-  } else { trigger_error('erreur place',E_USER_WARNING);
-    return; }
+  /*} else { trigger_error('erreur place',E_USER_WARNING);
+    return; }*/
 }
 
 public function getTel() { return $this->_tel; }

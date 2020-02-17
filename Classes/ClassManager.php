@@ -220,6 +220,41 @@ foreach ($donnees as $value) {
     echo "Mail : ".$value['mail'].'<br><br>' ;
     echo "Votre login: ".$value['login'].'<br><br>' ;
   }
+
+}
+
+public function affichage2 ()
+{
+
+  try{
+    $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
+    }
+    
+    catch(Exception $e){
+      die('Erreur:'.$e->getMessage());
+    }
+  
+$req = $bdd->prepare('SELECT * FROM reservationtable WHERE login = :login');
+$req->execute(array('login' => $_SESSION['login']));
+
+$donnees=$req->fetchall();
+
+if(isset($donnees))
+{
+  
+
+
+  foreach ($donnees as $value) {
+
+    echo "Nom : ".$value['nom']." "." tel : ".$value['tel']." "." Mail : ".$value['mail']." "." place: ".$value['place']." "." date: ".$value['date'].'<br/><br/>';
+  }
+
+
+}else
+{
+  echo "pas d'info";
+}
+
 }
 
 //modification des info user
@@ -311,14 +346,16 @@ public function Deconnexion()
 
 }
 
-public function reservationtable(Setup $donnees)
+public function reservationtable(Setup $test)
 {
 
-  $nom = 'lol';
-  $place = $donnees->getPlace();
-  $mail = $donnees->getMail();
-  $date =$donnees->getDate();
-  $tel = $donnees->getTel();
+  session_start ();
+
+  $nom = $test->getNom();
+  $place = $test->getPlace();
+  $mail = $test->getMail();
+  $date =$test->getDate();
+  $tel = $test->getTel();
 
   var_dump($nom) ;
   var_dump($tel) ;
@@ -326,7 +363,7 @@ public function reservationtable(Setup $donnees)
   var_dump($place) ;
   var_dump($date) ;
 
-
+  
   try
   {
   $bdd2= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
@@ -338,11 +375,11 @@ public function reservationtable(Setup $donnees)
  
 
 
-  $req2 = $bdd2->prepare('INSERT INTO reservationtable (nom) VALUES (?)');
+  $req2 = $bdd2->prepare('INSERT INTO reservationtable (login,nom,tel,mail,place,date) VALUES (?,?,?,?,?,?)');
 
-  $req2 -> execute(array($nom));
+  $req2 -> execute(array($_SESSION['login'],$nom,$tel,$mail,$place,$date));
 
-  var_dump($bdd2);
+  var_dump($test);
 
 
 }

@@ -27,6 +27,6 @@ $r = $add->reservationtable($test);
 
 
 
-//header("location: ../View/Connexion-Form.php");
+//sheader("location: ../View/Affichage.php");
 
 ?>
