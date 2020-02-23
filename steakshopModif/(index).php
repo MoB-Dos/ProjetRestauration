@@ -23,7 +23,7 @@
 
 	<div class="site-main">
 		<!--================ Start Home Banner Area =================-->
-		<section class="home_banner_area">
+		<section class="home_banner_area common-banner">
 			<div class="banner_inner">
 				<div class="container-fluid no-padding">
 					<div class="row fullscreen">
@@ -34,9 +34,9 @@
 		</section>
 		<!-- Start banner bottom -->
 		<div class="row banner-bottom align-items-center justify-content-center">
-			<div class="col-lg-4">
+		<div class="col-lg-4">
 				<div class="video-popup d-flex align-items-center">
-					<a class="play-video video-play-button animate" href="https://www.youtube.com/watch?v=aQM8yWoiy5s" data-animate="zoomIn"
+					<a class="play-video video-play-button animate" href="https://www.youtube.com/watch?v=KUln2DXU5VE" data-animate="zoomIn"
 					 data-duration="1.5s" data-delay="0.1s">
 						<span><img src="img/banner/play-icon.png" alt=""></span>
 					</a>
@@ -45,18 +45,21 @@
 						<p>You will love our execution</p>
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-8">
+			</div>	
+		<div class="col-lg-8 offset-lg-4">
 				<div class="banner_content">
 					<div class="row d-flex align-items-center">
-						<div class="col-lg-8 col-md-12">
-							<p class="top-text"></p>
-							<h1>GOOD GOOD </h1>
-							<h1>le meilleur de la cuisine antillaise</h1>
+						<div class="col-lg-7 col-md-12">
+							<h1>Food Menu</h1>
+							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
+								especially in the workplace. That’s why it’s crucial that, as women.</p>
 						</div>
-						<div class="col-lg-4 col-md-12">
-							<div class="banner-btn">
-								<a class="primary-btn text-uppercase" href="#">Explore Menu</a>
+						<div class="col-lg-5 col-md-12">
+							<div class="page-link-wrap">
+								<div class="page_link">
+									<a href="index.html">Home</a>
+									<a href="menu.html">Menu</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -72,7 +75,7 @@
 				<div class="row align-items-center justify-content-center">
 					<div class="col-lg-5">
 						<div class="left-content">
-							<h1>Daily Food Courses with Drinks </h1>
+							<h1>Des plats frais pour tout le monde ! </h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 								dolore
 								magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -80,13 +83,12 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 								dolore
 								magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-							<a href="#" class="primary-btn">See Full Menu</a>
+							<a href="#" class="primary-btn">Voir le Menu</a>
 						</div>
 					</div>
 					<div class="col-lg-6 offset-lg-1">
 						<div class="right-img">
-							<img class="img1 img-fluid" src="img/food/food1.jpg" alt="">
-							<img class="img2 img-fluid" src="img/food/food2.png" alt="">
+							<img class="img1 img-fluid" src="img/food/accras1 (3).jpg" alt="">
 						</div>
 					</div>
 				</div>
@@ -100,13 +102,12 @@
 				<div class="row align-items-center justify-content-center">
 					<div class="col-lg-6 ">
 						<div class="right-img">
-							<img class="img1 img-fluid" src="img/food/food3.jpg" alt="">
-							<img class="img2 img-fluid" src="img/food/food4.png" alt="">
+							<img class="img1 img-fluid" src="img/food/accras1 (1).jpg" alt="">
 						</div>
 					</div>
 					<div class="col-lg-5 offset-lg-1">
 						<div class="left-content">
-							<h1>Daily Food Courses with Drinks </h1>
+							<h1>Une Grande variété de plat Antillais</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 								dolore
 								magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -178,12 +179,12 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-6">
 						<div class="left-chef">
-							<img class="img-fluid" src="img/chef/chef1.jpg" alt="">
+							<img class="img-fluid" src="img/chef/chef.jpg" alt="">
 						</div>
 					</div>
 					<div class="col-lg-5 offset-lg-1">
 						<div class="left-content">
-							<h1>Daily Food Courses with Drinks </h1>
+							<h1>Un grand chef pour cuisiner nos plats</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 								dolore
 								magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

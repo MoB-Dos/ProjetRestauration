@@ -7,6 +7,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="img/favicon.png" type="image/png">
 	<title>SteakShop Restaurant</title>
+	<style type="text/css">
+            #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+                height:500px;
+                margin-bottom:10%;
+            }
+        </style>
 	<!-- Bootstrap CSS -->
 <?php  require_once('linkcss.html') ?>
 	<!-- main css -->
@@ -59,9 +65,9 @@
 		<!--================Contact Area =================-->
 		<section class="contact_area section_gap">
 			<div class="container">
-				<div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-				 data-mlat="40.701083" data-mlon="-74.1522848">
-				</div>
+	        <div id="map">
+	    <!-- Ici s'affichera la carte -->
+	</div>
 				<div class="row">
 					<div class="col-lg-3">
 						<div class="contact_info">
@@ -83,21 +89,21 @@
 						</div>
 					</div>
 					<div class="col-lg-9">
-						<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+						<form class="row contact_form" action="../Traitement/contactTraitement.php" method="post" id="contactForm" novalidate="novalidate">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+									<input type="text" class="form-control" id="nom" name="nom" placeholder="Enter your name" required />
 								</div>
 								<div class="form-group">
-									<input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+									<input type="email" class="form-control" id="mail" name="mail" placeholder="Enter email address" required >
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+									<input type="text" class="form-control" id="objet" name="objet" placeholder="Enter Subject" required>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+									<textarea class="form-control" name="sujet" id="sujet" rows="1" placeholder="Enter Message" required></textarea>
 								</div>
 							</div>
 							<div class="col-md-12 text-right">

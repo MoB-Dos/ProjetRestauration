@@ -96,7 +96,7 @@ public function Mail($objet,$sujet,$email)
       $mail->Host       = 'smtp.gmail.com';
       $mail->SMTPAuth   = true;
       $mail->Username   = 'projetweb932@gmail.com';
-      $mail->Password   = 'projetweb932';
+      $mail->Password   = 'projetweb932azer';
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
       $mail->Port       = 587;
 
@@ -174,7 +174,7 @@ public function Connexion(SetUp $donnees)
         {
           setcookie('admin', '1', time() + 365*24*3600, null, null, false, true);
           $_SESSION['admin'] = 1;
-          header ('location: ../View/accueil.php');
+          header ('location: ../steakshopModif/(index).php');
 
         }
       }
@@ -236,6 +236,40 @@ public function affichage2 ()
   
 $req = $bdd->prepare('SELECT * FROM reservationtable WHERE login = :login');
 $req->execute(array('login' => $_SESSION['login']));
+
+$donnees=$req->fetchall();
+
+if(isset($donnees))
+{
+  
+
+
+  foreach ($donnees as $value) {
+
+    echo "Nom : ".$value['nom']." "." tel : ".$value['tel']." "." Mail : ".$value['mail']." "." place: ".$value['place']." "." date: ".$value['date'].'<br/><br/>';
+  }
+
+
+}else
+{
+  echo "pas d'info";
+}
+
+}
+
+public function affichage3 ()
+{
+
+  try{
+    $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
+    }
+    
+    catch(Exception $e){
+      die('Erreur:'.$e->getMessage());
+    }
+  
+$req = $bdd->query('SELECT * FROM reservationtable');
+
 
 $donnees=$req->fetchall();
 
@@ -381,6 +415,60 @@ public function reservationtable(Setup $test)
 
   var_dump($test);
 
+
+}
+
+public function contact(Setup $test)
+{
+
+        $mail = $test->getMail();
+        $nom = $test->getNom();
+        $objet = $test->getObjet();
+        $sujet = $test->getSujet();
+        $email = 'projetweb932@gmail.com';
+
+        $sujet = "Email:"." ".$mail.'<br/><br/>'." "."Nom:"." ".$nom.'<br/><br/>'." "."Message:"." ".$sujet; 
+
+        echo $sujet;
+
+        $this-> Mail($objet,$sujet,$email);
+
+        header ('location: ../steakshopModif/contact.php');
+
+}
+
+
+public function commentaireAff()
+{
+
+  try{
+    $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
+    }
+    
+    catch(Exception $e){
+      die('Erreur:'.$e->getMessage());
+    }
+  
+$req = $bdd->query('SELECT * FROM commentaire');
+
+
+$donnees=$req->fetchall();
+
+if(isset($donnees))
+{
+  
+
+
+  foreach ($donnees as $value) {
+
+    echo $value['nom']." : ".$value['message'].'<br/><br/>';
+  }
+
+
+}else
+{
+  echo "pas de commentaire";
+}
 
 }
 

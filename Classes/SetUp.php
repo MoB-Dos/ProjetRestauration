@@ -2,7 +2,7 @@
 
 class SetUp
 {
-  private $_nom,$_prenom,$_mail,$_login,$_mdp,$_mdp2,$_tel,$_date,$_place;
+  private $_nom,$_prenom,$_mail,$_login,$_mdp,$_mdp2,$_tel,$_date,$_place,$_objet,$_sujet;
 
   public function __construct(array $donnees)
   {
@@ -78,31 +78,64 @@ public function setMdp2($mdp2) {
 
 public function setTel($tel) {
 
-  /*if ($tel) {*/
+  if (strlen($tel) == 10) {
       $this->_tel = $tel;
-  /*} else { trigger_error('erreur tel',E_USER_WARNING);
-    return; }*/
+  } else { trigger_error('erreur tel',E_USER_WARNING);
+    return; }
 }
 
 public function setPlace($place) {
 
-  /*if ($place) {*/
+  if ($place > 1 && $place <= 20) {
       $this->_place = $place;
-  /*} else { trigger_error('erreur place',E_USER_WARNING);
-    return; }*/
+  } else { trigger_error('erreur place',E_USER_WARNING);
+    return; }
+}
+
+public function setObjet($objet) {
+
+  if (strlen($objet) > 1 && strlen($objet) <= 20) {
+      $this->_objet = $objet;
+  } else { trigger_error('erreur objet',E_USER_WARNING);
+    return; }
+}
+
+public function setSujet($sujet) {
+
+  if (strlen($sujet) <= 200) {
+      $this->_sujet = $sujet;
+  } else { trigger_error('erreur sujet',E_USER_WARNING);
+    return; }
 }
 
 public function setDate($date) {
 
- /*if ($date) {*/
+  try{
+    $bdd= new PDO('mysql:host=localhost;dbname=projetrestauration;charset=utf8','root','');
+    }
+    
+    catch(Exception $e){
+      die('Erreur:'.$e->getMessage());
+    }
+  
+  $req = $bdd->prepare ('SELECT COUNT(*) as ladate FROM reservationtable WHERE date = ?  ');
+  $req -> execute(array($date));
+  
+  
+  $donnees=$req->fetch();
+
+ if ($donnees['ladate'] < 50) {
       $this->_date = $date;
-  /*} else { trigger_error('erreur place',E_USER_WARNING);
-    return; }*/
+  } else { trigger_error('erreur date',E_USER_WARNING);
+    return; }
 }
 
 public function getTel() { return $this->_tel; }
 public function getDate() { return $this->_date; }
 public function getPlace() { return $this->_place; }
+
+public function getObjet() { return $this->_objet; }
+public function getSujet() { return $this->_sujet; }
 
 public function getNom() { return $this->_nom; }
 public function getPrenom() { return $this->_prenom; }
