@@ -23,7 +23,7 @@
 
 	<div class="site-main">
 		<!--================ Start Home Banner Area =================-->
-		<section class="home_banner_area common-banner">
+		<section class="home_banner_area">
 			<div class="banner_inner">
 				<div class="container-fluid no-padding">
 					<div class="row fullscreen">
@@ -34,7 +34,7 @@
 		</section>
 		<!-- Start banner bottom -->
 		<div class="row banner-bottom align-items-center justify-content-center">
-		<div class="col-lg-4">
+			<div class="col-lg-4">
 				<div class="video-popup d-flex align-items-center">
 					<a class="play-video video-play-button animate" href="https://www.youtube.com/watch?v=KUln2DXU5VE" data-animate="zoomIn"
 					 data-duration="1.5s" data-delay="0.1s">
@@ -45,21 +45,19 @@
 						<p>You will love our execution</p>
 					</div>
 				</div>
-			</div>	
-		<div class="col-lg-8 offset-lg-4">
+			</div>
+			<div class="col-lg-8">
 				<div class="banner_content">
 					<div class="row d-flex align-items-center">
-						<div class="col-lg-7 col-md-12">
-							<h1>Food Menu</h1>
+						<div class="col-lg-8 col-md-12">
+							<p class="top-text">Steak Shop offers best steak in town</p>
+							<h1>Steak Shop offers best steak in town</h1>
 							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
 								especially in the workplace. That’s why it’s crucial that, as women.</p>
 						</div>
-						<div class="col-lg-5 col-md-12">
-							<div class="page-link-wrap">
-								<div class="page_link">
-									<a href="index.html">Home</a>
-									<a href="menu.html">Menu</a>
-								</div>
+						<div class="col-lg-4 col-md-12">
+							<div class="banner-btn">
+								<a class="primary-btn text-uppercase" href="#">Explore Menu</a>
 							</div>
 						</div>
 					</div>
@@ -129,57 +127,13 @@
 		</div>
 		<!--================ End Lunch Area =================-->
 
-
-		<!--================ Start Reservstion Area =================-->
-		<section class="reservation-area section_gap_top">
-			<div class="container">
-				<div class="row align-items-center justify-content-center">
-					<div class="col-lg-6 offset-lg-6">
-						<div class="contact-form-section">
-							<h1>Formulaire de reservation</h1>
-							<form class="contact-form-area contact-page-form contact-form text-right" action="../Traitement/reservation.php" method="post">
-								<div class="form-group col-md-12">
-									<input type="text" class="form-control" id="name" name="nom" placeholder="Nom" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Nom'">
-								</div>
-								<div class="form-group col-md-12">
-									<input type="email" class="form-control" id="email" name="mail" placeholder="Adresse Mail" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Adresse Mail'">
-								</div>
-
-								<div class="form-group col-md-12">
-									<input type="text" class="form-control" id="subject" name="tel" placeholder="Numero de telephone" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Numero de telephone'">
-								</div>
-
-								<div class="form-group col-md-12">
-									<input type="text" class="form-control" id="place" name="place" placeholder="Nombre de personne" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Nombre de personne'">
-								</div>
-
-
-								<div class="form-group col-md-12">
-									<input type="text" class="form-control" id="datepicker" name="date" placeholder="Choissisez une date !" onfocus="this.placeholder = ''"
-									 onblur="this.placeholder = 'Choissisez une date !'">
-								</div>
-								<div class="col-lg-12 text-center">
-									<button class="primary-btn text-uppercase">Faire une reservation !</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--================ End Reservstion Area =================-->
-
 		<!--================ Start Chef Area =================-->
 		<div class="chef-area section_gap_top">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-lg-6">
 						<div class="left-chef">
-							<img class="img-fluid" src="img/chef/chef.jpg" alt="">
+							<img class="img-fluid" src="img/chef/chef.jpg" alt="" style="width : 90%">
 						</div>
 					</div>
 					<div class="col-lg-5 offset-lg-1">
@@ -269,7 +223,7 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-7">
 						<div class="main_title">
-							<h1>In associasion with</h1>
+							<h1>En association avec</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 								dolore
 								magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

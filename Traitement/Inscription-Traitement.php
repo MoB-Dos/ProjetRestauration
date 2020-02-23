@@ -19,7 +19,7 @@ $add = new ClassManager($test);
 
 $r = $add->Traitement($test);
 
-header("location: ../View/Connexion-Form.php");
+header("location: ../steakshopModif/Connexion-Form.php");
 
 
  ?>

@@ -37,15 +37,16 @@
 				<div class="banner_content">
 					<div class="row d-flex align-items-center">
 						<div class="col-lg-7 col-md-12">
-							<h1>Food Menu</h1>
-							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards
-								especially in the workplace. That’s why it’s crucial that, as women.</p>
+							<h1>Menu du restaurant</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore
+								magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.</p>
 						</div>
 						<div class="col-lg-5 col-md-12">
 							<div class="page-link-wrap">
 								<div class="page_link">
-									<a href="index.html">Home</a>
-									<a href="menu.html">Menu</a>
+									<a href="index.html">Acceuil</a>
 								</div>
 							</div>
 						</div>
@@ -62,61 +63,61 @@
 				<div class="row menu_inner">
 					<div class="col-lg-5">
 						<div class="menu_list">
-							<h1>Appetizer</h1>
+							<h1>Entrée</h1>
 							<ul class="list">
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Accras
+										<span>6€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Jambon Melon
+										<span>5€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Ananas farçi aux crevettes
+										<span>10€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Tartare d'Espadon marinés
+										<span>20€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 							</ul>
 						</div>
 
 						<div class="menu_list">
-							<h1>Side Dishes</h1>
+							<h1>Dessert</h1>
 							<ul class="list">
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Fondants choco Ananas
+										<span>6€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Baba au Rhum
+										<span>9€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Salades de fruits
+										<span>5€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Glaçe : chocolat, coco, anis
+										<span>6€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 							</ul>
 						</div>
@@ -124,81 +125,35 @@
 
 					<div class="col-lg-5 offset-lg-1">
 						<div class="menu_list res-mr">
-							<h1>Main Courses</h1>
+							<h1>Plat Principale</h1>
 							<ul class="list">
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Dorade
+										<span>20€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Bokit
+										<span>5€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Columbo & Riz
+										<span>9€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
+									<h4>Touloulou & Riz
+										<span>15€</span>
 									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
-								</li>
-								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
-									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
-								</li>
-								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
-									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
-								</li>
-								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
-									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
 								</li>
 							</ul>
 						</div>
-						<div class="menu_list">
-							<h1>Desserts</h1>
-							<ul class="list">
-								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
-									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
-								</li>
-								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
-									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
-								</li>
-								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
-									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
-								</li>
-								<li>
-									<h4>Ham & Potato Sandwiches
-										<span>$20</span>
-									</h4>
-									<p>(French bread baguette, cooked ham, potato salad)</p>
-								</li>
-							</ul>
-						</div>
+
 					</div>
 				</div>
 			</div>

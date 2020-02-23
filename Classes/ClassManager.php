@@ -70,6 +70,8 @@ class ClassManager
         $email = $mail;
 
         $this-> Mail($objet,$sujet,$email);
+
+        header("location: ../steakshopModif/Connexion-Form.php");
       }
 
       //Sinon, on affiche une boite de dialogue d'erreur
@@ -183,7 +185,7 @@ public function Connexion(SetUp $donnees)
       {
         echo '<body onLoad="alert(\'Acces refuse\')">';
 
-        echo '<meta http-equiv="refresh" content="0;URL=#">';
+        echo '<meta http-equiv="refresh" content="0;URL=Connexion-Form.php">';
       }
     }
     //Sinon on demande à remplir les champs vides

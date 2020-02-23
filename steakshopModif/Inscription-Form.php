@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -7,12 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="img/favicon.png" type="image/png">
 	<title>SteakShop Restaurant</title>
-	<style type="text/css">
-            #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-                height:500px;
-                margin-bottom:10%;
-            }
-        </style>
 	<!-- Bootstrap CSS -->
 <?php  require_once('linkcss.html') ?>
 	<!-- main css -->
@@ -42,7 +37,7 @@
 				<div class="banner_content">
 					<div class="row d-flex align-items-center">
 						<div class="col-lg-7 col-md-12">
-							<h1>Nous contacter</h1>
+							<h1>Inscris toi pour rejoindre la Bande !</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 								dolore
 								magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -55,60 +50,50 @@
 		<!-- End banner bottom -->
 		<!--================ End Home Banner Area =================-->
 
-		<!--================Contact Area =================-->
-		<section class="contact_area section_gap">
+		<section class="reservation-area section_gap_top">
 			<div class="container">
-	        <div id="map">
-	    <!-- Ici s'affichera la carte -->
-	</div>
-				<div class="row">
-					<div class="col-lg-3">
-						<div class="contact_info">
-							<div class="info_item">
-								<i class="lnr lnr-home"></i>
-								<h6>Martinique</h6>
-								<p>St-Marie</p>
+				<div class="row align-items-center justify-content-center">
+					<div class="col-lg-6 offset-lg-6">
+						<div class="contact-form-section" style="padding-top: 50px;padding-bottom: 0px;">
+							<h1>Formulaire d'Inscription'</h1>
+
+							<form class="contact-form-area contact-page-form contact-form text-right" action="../Traitement/Inscription-Traitement.php" method="post">
+							<div class="form-group">
+									<input type="text" class="form-control" id="login" name="login" placeholder="Entrer un Login" required />
+								</div>
+
+								<div class="form-group">
+									<input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer un Nom" required >
+                				</div>
+                
+               					 <div class="form-group">
+									<input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrer un Prenom" required >
+                				</div>
+                
+                				<div class="form-group">
+									<input type="email" class="form-control" id="mail" name="mail" placeholder="Entrer un Mail" required >
+                				</div>
+                
+                				<div class="form-group">
+									<input type="password" class="form-control" id="mdp" name="mdp" placeholder="Entrer un Mot De Passe" required >
+                				</div>
+
+                				<div class="form-group">
+									<input type="password" class="form-control" id="mdp" name="mdp2" placeholder="Retaper votre Mot De Passe" required >
+								</div>
+
 							</div>
-							<div class="info_item">
-								<i class="lnr lnr-phone-handset"></i>
-								<h6>00 (440) 9865 562</a></h6>
-								<p>lundi au Vendredi de 8h à 23h</p>
-							</div>
-							<div class="info_item">
-								<i class="lnr lnr-envelope"></i>
-								<h6><a href="#">goodgood@gmail.com</a></h6>
-								<p>contacter nous a tout moment !</p>
-							</div>
+
+
+							<div class="col-lg-12 text-center">
+									<button class="primary-btn text-uppercase">Inscription !</button>
+								</div>
+							</form>
 						</div>
-					</div>
-					<div class="col-lg-9">
-						<form class="row contact_form" action="../Traitement/contactTraitement.php" method="post" id="contactForm" novalidate="novalidate">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control" id="nom" name="nom" placeholder="Enter your name" required />
-								</div>
-								<div class="form-group">
-									<input type="email" class="form-control" id="mail" name="mail" placeholder="Enter email address" required >
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control" id="objet" name="objet" placeholder="Enter Subject" required>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<textarea class="form-control" name="sujet" id="sujet" rows="1" placeholder="Enter Message" required></textarea>
-								</div>
-							</div>
-							<div class="col-md-12 text-right">
-								<button type="submit" value="submit" class="primary-btn text-uppercase">Envoyer votre Message</button>
-							</div>
-						</form>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!--================Contact Area =================-->
-
 		<!--================ Start Footer Area =================-->
 <?php  require_once('footer.html') ?>
 		<!--================ Start Footer Area =================-->

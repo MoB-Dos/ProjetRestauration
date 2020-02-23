@@ -37,16 +37,13 @@ if ($_SESSION['admin'] == 0)
 
         <li class="nav-item"><a class="nav-link" href="menu.php"><img style="width:50px" src="img/header/meal.png" alt="">menu</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="book-table.php"><img style="width:50px" src="img/header/dining-room.png" alt="">Book
-            Table</a></li>
+        <li class="nav-item"><a class="nav-link" href="book-table.php"><img style="width:50px" src="img/header/dining-room.png" alt="">Réservation</a></li>
            
         <li class="nav-item"><a class="nav-link" href="blog.php"><img style="width:50px" src="img/header/ramen.png" alt="">Blog</a></li>
 
         <li class="nav-item"><a class="nav-link" href="contact.php"><img style="width:50px" src="img/header/love.png" alt="">contact</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="about-us.php"> <img style="width:50px" src="img/header/spoon.png" alt=""> about</a></li>
-
-        <li class="nav-item"><a class="nav-link" href="../View/Affichage.php"><img style="width:50px" src="img/header/contact-form.png" alt="">Information</a></li>
+        <li class="nav-item"><a class="nav-link" href="Affichage.php"><img style="width:50px" src="img/header/contact-form.png" alt="">Information</a></li>
 
         <li class="nav-item"><a class="nav-link" href="../Traitement/deco.php"><img style="width:50px" src="img/header/exit.png" alt="">Deconnexion</a></li>
 
@@ -83,18 +80,15 @@ else
 
         <li class="nav-item"><a class="nav-link" href="menu.php"><img style="width:50px" src="img/header/meal.png" alt="">menu</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="book-table.php"><img style="width:50px" src="img/header/dining-room.png" alt="">Book
-            Table</a></li>
+        <li class="nav-item"><a class="nav-link" href="book-table.php"><img style="width:50px" src="img/header/dining-room.png" alt="">Réservation</a></li>
 
         <li class="nav-item"><a class="nav-link" href="blog.php"><img style="width:50px" src="img/header/ramen.png" alt="">Blog</a></li>
 
         <li class="nav-item"><a class="nav-link" href="contact.php"><img style="width:50px" src="img/header/love.png" alt="">contact</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="about-us.php"> <img style="width:50px" src="img/header/spoon.png" alt=""> about</a></li>
+        <li class="nav-item"><a class="nav-link" href="Affichage.php"><img style="width:50px" src="img/header/contact-form.png" alt="">Information</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="../View/Affichage.php"><img style="width:50px" src="img/header/contact-form.png" alt="">Information</a></li>
-
-        <li class="nav-item"><a class="nav-link" href="../View/InfoAdmin.php"><img style="width:50px" src="img/header/wrench.png" alt="">Info. Admin</a></li>
+        <li class="nav-item"><a class="nav-link" href="InfoAdmin.php"><img style="width:50px" src="img/header/wrench.png" alt="">Info. Admin</a></li>
 
         <li class="nav-item"><a class="nav-link" href="../Traitement/deco.php"><img style="width:50px" src="img/header/exit.png" alt="">Deconnexion</a></li>
 
@@ -131,18 +125,15 @@ else {
 
           <li class="nav-item"><a class="nav-link" href="menu.php"><img style="width:50px" src="img/header/meal.png" alt="">menu</a></li>
 
-          <li class="nav-item"><a class="nav-link" href="book-table.php"><img style="width:50px" src="img/header/dining-room.png" alt="">Book
-              Table</a></li>
+          <li class="nav-item"><a class="nav-link" href="book-table.php"><img style="width:50px" src="img/header/dining-room.png" alt="">Réservation</a></li>
 
          <li class="nav-item"><a class="nav-link" href="blog.php"><img style="width:50px" src="img/header/ramen.png" alt="">Blog</a></li>
 
           <li class="nav-item"><a class="nav-link" href="contact.php"><img style="width:50px" src="img/header/love.png" alt="">contact</a></li>
+          
+          <li class="nav-item"><a class="nav-link" href="Connexion-Form.php"><img style="width:50px" src="img/header/sign-in.png" alt="">Connexion</a></li>
 
-          <li class="nav-item"><a class="nav-link" href="about-us.php"> <img style="width:50px" src="img/header/spoon.png" alt=""> about</a></li>
-
-          <li class="nav-item"><a class="nav-link" href="../View/Connexion-Form.php"><img style="width:50px" src="img/header/sign-in.png" alt="">Connexion</a></li>
-
-          <li class="nav-item"><a class="nav-link" href="../View/Inscription-Form.php"><img style="width:50px" src="img/header/add.png" alt="">Inscription</a></li>
+          <li class="nav-item"><a class="nav-link" href="Inscription-Form.php"><img style="width:50px" src="img/header/add.png" alt="">Inscription</a></li>
 
         </ul>
       </div>
